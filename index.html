@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog Preview Card</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --black:#0c0c0c;
+    --paper:#fbfbf9;
+    --green:#18e0a0;
+    --pink:#ff3d84;
+    --pink-dark:#d61f66;
+    --grey:#6b6b6b;
+    --radius:16px;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    background:var(--black);
+    background-image:
+        radial-gradient(circle at 12% 18%, rgba(24,224,160,0.18), transparent 40%),
+        radial-gradient(circle at 88% 82%, rgba(255,61,132,0.18), transparent 42%);
+    font-family:'Inter', Arial, sans-serif;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:48px 20px;
+}
+
+.card{
+    width:100%;
+    max-width:384px;
+    background:var(--paper);
+    border-radius:var(--radius);
+    padding:16px;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.6);
+    transition:transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 40px 70px -18px rgba(255,61,132,0.35);
+}
+
+.thumb{
+    width:100%;
+    border-radius:12px;
+    overflow:hidden;
+    line-height:0;
+}
+
+.thumb svg{
+    width:100%;
+    height:auto;
+    display:block;
+}
+
+.content{
+    padding:28px 8px 8px;
+}
+
+.tag{
+    display:inline-block;
+    background:var(--green);
+    color:var(--black);
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:13px;
+    padding:6px 14px;
+    border-radius:6px;
+    letter-spacing:0.2px;
+}
+
+.meta{
+    margin:18px 0 10px;
+    font-size:13.5px;
+    color:var(--grey);
+    font-weight:500;
+}
+
+.title{
+    margin:0 0 12px;
+    font-family:'Sora', sans-serif;
+    font-size:24px;
+    line-height:1.25;
+}
+
+.title-link{
+    color:var(--black);
+    text-decoration:none;
+    background-image:linear-gradient(var(--pink), var(--pink));
+    background-repeat:no-repeat;
+    background-position:0 100%;
+    background-size:0% 2px;
+    transition:background-size 0.25s ease, color 0.25s ease;
+    padding-bottom:2px;
+}
+
+.title-link:hover{
+    color:var(--pink-dark);
+    background-size:100% 2px;
+}
+
+.title-link:focus-visible{
+    outline:3px solid var(--green);
+    outline-offset:4px;
+    border-radius:3px;
+}
+
+.desc{
+    margin:0 0 22px;
+    font-size:15px;
+    line-height:1.6;
+    color:var(--grey);
+}
+
+.author{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.avatar{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:2px solid var(--green);
+    object-fit:cover;
+}
+
+.author-name{
+    font-family:'Sora', sans-serif;
+    font-weight:700;
+    font-size:14.5px;
+    color:var(--black);
+}
+
+@media (max-width:420px){
+    .card{
+        max-width:100%;
+    }
+    .content{
+        padding:22px 4px 4px;
+    }
+    .title{
+        font-size:21px;
+    }
+}
+</style>
+</head>
+<body>
+
+<main>
+
+<article class="card">
+
+<div class="thumb">
+<svg viewBox="0 0 400 220" width="400" height="220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<rect width="400" height="220" fill="#0c0c0c"/>
+<circle cx="120" cy="90" r="95" fill="#ff3d84"/>
+<circle cx="150" cy="70" r="70" fill="#0c0c0c"/>
+<path d="M40 220 L160 220 L260 90 L400 90 L400 220 Z" fill="#18e0a0"/>
+<path d="M330 20 L370 20 L370 60 L410 60" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M300 150 L260 150 L260 190" fill="none" stroke="#0c0c0c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</div>
+
+<div class="content">
+
+<span class="tag">Learning</span>
+
+<p class="meta">Published 20 Jul 2026</p>
+
+<h1 class="title">
+<a href="#" class="title-link">HTML &amp; CSS Foundations</a>
+</h1>
+
+<p class="desc">These languages are the backbone of every website, shaping structure, content, and the way people experience the page.</p>
+
+<div class="author">
+<img class="avatar" src="https://i.pravatar.cc/64?img=13" alt="">
+<span class="author-name">Greg Hooper</span>
+</div>
+
+</div>
+
+</article>
+
+</main>
+
+</body>
+</html>
